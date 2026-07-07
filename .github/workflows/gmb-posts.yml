@@ -1,0 +1,34 @@
+name: GMB Weekly SEO Posts
+
+on:
+  schedule:
+    # 3 posts par jour. GitHub Actions tourne en UTC.
+    # 07:00 UTC ~ 08-09h Paris (matin)
+    # 11:00 UTC ~ 12-13h Paris (midi)
+    # 16:00 UTC ~ 17-18h Paris (soir)
+    - cron: "0 7 * * *"
+    - cron: "0 11 * * *"
+    - cron: "0 16 * * *"
+  workflow_dispatch: {}   # Permet de lancer manuellement depuis l'onglet Actions
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du repo
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer les dependances
+        run: pip install requests
+
+      - name: Publier le post GMB
+        env:
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+        run: python post_gmb.py

@@ -1,0 +1,44 @@
+name: TikTok Auto Video
+
+on:
+  schedule:
+    # 1 video par jour a ~10h Paris (09:00 UTC). Ajuste si besoin.
+    - cron: "0 9 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  tiktok:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du repo
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu
+
+      - name: Installer les dependances Python
+        run: pip install pillow requests
+
+      - name: Generer la video
+        run: python make_video.py
+
+      - name: Publier sur TikTok
+        env:
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
+          # SELF_ONLY tant que l'app n'est pas auditee par TikTok.
+          # Passe a PUBLIC_TO_EVERYONE une fois l'audit valide.
+          TIKTOK_PRIVACY: SELF_ONLY
+        run: python post_tiktok.py
+
+      - name: Archiver la video generee
+        uses: actions/upload-artifact@v4
+        with:
+          name: tiktok-video
+          path: out/tiktok.mp4
