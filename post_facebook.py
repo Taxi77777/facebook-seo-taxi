@@ -7,87 +7,164 @@ from datetime import datetime
 PAGE_TOKEN = os.environ["FB_PAGE_TOKEN"]
 PAGE_ID    = os.environ["FB_PAGE_ID"]
 SITE_URL   = "https://www.taximarnelavallee.com"
-PHONE      = "01 XX XX XX XX"  # ← Remplacez par votre vrai numéro
+PHONE      = "06 XX XX XX XX"
 
-# ─── Messages SEO variés ───────────────────────────────────────────────────────
+# ─── Posts multilingues SEO ────────────────────────────────────────────────────
 POSTS = [
+
+    # ════════════════════════════════════════════
+    # 🇫🇷 FRANÇAIS
+    # ════════════════════════════════════════════
     f"""🚖 Taxi Marne-la-Vallée — Disponible 24h/24 !
-Besoin d'un taxi fiable à Marne-la-Vallée, Chessy, Val d'Europe ou Disneyland Paris ?
-📞 Réservez maintenant : {PHONE}
-🌐 {SITE_URL}
-#TaxiMarneLaVallée #TaxiDisneyland #ValDEurope #Chessy #TaxiParis""",
-
-    f"""✈️ Navette Aéroport depuis Marne-la-Vallée
-CDG, Orly, Beauvais — On vous dépose à l'heure, à chaque fois !
-💼 Prise en charge de vos bagages
-⏰ Ponctualité garantie
+Besoin d'un taxi fiable ? Aéroport, Disneyland, gares, médical...
 📞 {PHONE} | 🌐 {SITE_URL}
-#NavetteAéroport #TaxiCDG #TaxiOrly #TaxiMarneLaVallée""",
+#TaxiMarneLaVallée #TaxiDisneyland #ValDEurope #Chessy #TaxiParis #ChaufferPrivé""",
 
-    f"""🎡 Taxi pour Disneyland Paris
-Vous visitez Disneyland Paris ? Profitez d'un trajet confortable et sans stress !
-🏰 Départ depuis toute l'Île-de-France
-👨‍👩‍👧 Véhicules familiaux disponibles
-📞 Réservez : {PHONE}
-🌐 {SITE_URL}
-#DisneylandParis #TaxiDisney #TaxiMarneLaVallée""",
+    f"""✈️ Navette Aéroport CDG & Orly depuis Marne-la-Vallée
+Ponctualité garantie — Prise en charge bagages incluse ✅
+📞 {PHONE} | 🌐 {SITE_URL}
+#NavetteAéroport #TaxiCDG #TaxiOrly #TaxiMarneLaVallée #TaxiParis""",
+
+    f"""🏰 Taxi pour Disneyland Paris !
+Départ depuis toute l'Île-de-France — Véhicules familiaux disponibles 👨‍👩‍👧
+📞 {PHONE} | 🌐 {SITE_URL}
+#DisneylandParis #TaxiDisney #TaxiMarneLaVallée #Chessy #VTC77""",
+
+    f"""🌙 Taxi de nuit Marne-la-Vallée — 24h/24, 7j/7
+Retour de soirée, train tardif, aéroport de nuit ? On est là !
+💳 CB acceptée | 📞 {PHONE} | 🌐 {SITE_URL}
+#TaxiNuit #TaxiMarneLaVallée #TaxiGareDisney #VTC77 #TaxiParis""",
 
     f"""🏥 Transport médical & VSL — Marne-la-Vallée
-Rendez-vous médical, dialyse, kiné... Nous assurons votre transport avec respect et ponctualité.
-🩺 Conventionné Sécurité Sociale
+Dialyse, kiné, hôpital... Conventionné Sécurité Sociale 🩺
 📞 {PHONE} | 🌐 {SITE_URL}
-#TransportMédical #VSL #TaxiSanté #MarneLaVallée""",
+#TransportMédical #VSL #TaxiSanté #MarneLaVallée #TaxiConventionné""",
 
-    f"""🌙 Taxi de nuit — Marne-la-Vallée
-Retour de soirée, train tardif, aéroport de nuit... Nous sommes là 24h/24 et 7j/7 !
-🔒 Trajet sécurisé
-💳 Paiement CB accepté
+    # ════════════════════════════════════════════
+    # 🇬🇧 ENGLISH
+    # ════════════════════════════════════════════
+    f"""🚖 Taxi to Disneyland Paris — Book Now!
+Reliable, comfortable taxi service from/to Disneyland Paris & CDG Airport 🏰✈️
 📞 {PHONE} | 🌐 {SITE_URL}
-#TaxiNuit #TaxiMarneLaVallée #TaxiGareDisney""",
+#DisneylandParisTaxi #ParisAirportTransfer #CDGAirport #DisneylandTransfer #TaxiParis #ParisTransport""",
 
-    f"""🚉 Taxi Gare de Chessy / Val d'Europe
-Prise en charge directe à la gare de Chessy ou Val d'Europe.
-🚅 TGV, RER A — On s'adapte à votre horaire !
+    f"""✈️ Airport Transfer Paris — CDG & Orly
+Professional taxi service available 24/7. Fixed prices, no surprises!
+🧳 Luggage assistance included
+📞 {PHONE} | 🌐 {SITE_URL}
+#ParisAirportTaxi #CDGTransfer #OrlyAirport #ParisTaxi #AirportShuttle #FranceTaxi""",
+
+    f"""🏰 Visiting Disneyland Paris? We drive you there!
+Family-friendly taxis, child seats available 👨‍👩‍👧‍👦
+Book online: {SITE_URL}
 📞 {PHONE}
-🌐 {SITE_URL}
-#TaxiChessy #TaxiValDEurope #RERA #TGVMarneLaVallée""",
+#DisneylandParis #DisneyTransfer #ParisTaxi #FamilyTaxi #DisneylandShuttle #VisitParis""",
 
-    f"""⭐ Votre taxi de confiance à Marne-la-Vallée !
-Des milliers de clients satisfaits depuis des années.
-✅ Véhicules propres & climatisés
-✅ Chauffeurs professionnels
-✅ Tarifs transparents
+    f"""⭐ Your trusted taxi near Marne-la-Vallée
+Val d'Europe • Chessy • Noisy-le-Grand • Paris • All airports
+💳 Card payment accepted | 24/7 service
 📞 {PHONE} | 🌐 {SITE_URL}
-#TaxiMarneLaVallée #TaxiProfessionnel #AvisClients""",
+#MarneLaVallee #ValDEurope #ParisTaxi #TaxiService #FranceTaxi #DisneylandParis""",
 
-    f"""📍 Zones desservies — Taxi Marne-la-Vallée
-Chessy • Val d'Europe • Noisy-le-Grand • Bussy-Saint-Georges • Lagny-sur-Marne • Torcy • Lognes • et toute l'Île-de-France !
+    # ════════════════════════════════════════════
+    # 🇪🇸 ESPAÑOL
+    # ════════════════════════════════════════════
+    f"""🚖 Taxi a Disneyland París — ¡Reserva ahora!
+Servicio de taxi profesional desde/hasta Disneyland París y el aeropuerto CDG ✈️🏰
+📞 {PHONE} | 🌐 {SITE_URL}
+#TaxiDisneylandParis #TransferParís #TaxiCDG #DisneyShutle #TaxiParís #ViajeParís""",
+
+    f"""✈️ Traslado al Aeropuerto CDG y Orly — Marne-la-Vallée
+Servicio puntual disponible 24h/7 días. ¡Precios fijos sin sorpresas!
+🧳 Ayuda con equipaje incluida
+📞 {PHONE} | 🌐 {SITE_URL}
+#TransferAeropuerto #TaxiParís #CDGAeropuerto #TaxiCDG #FranciaViaje #DisneyShutle""",
+
+    f"""🏰 ¿Visitando Disneyland París? ¡Te llevamos!
+Taxis familiares con sillas para niños disponibles 👨‍👩‍👧‍👦
+Reserva en: {SITE_URL}
 📞 {PHONE}
-🌐 {SITE_URL}
-#TaxiMarneLaVallée #TaxiSeineetMarne #TaxiBussySaintGeorges""",
+#DisneylandParís #TaxiDisney #ViajeParís #FamiliaViaje #TaxiFrancia #DisneyShutle""",
+
+    # ════════════════════════════════════════════
+    # 🇮🇹 ITALIANO
+    # ════════════════════════════════════════════
+    f"""🚖 Taxi per Disneyland Parigi — Prenota Ora!
+Servizio taxi professionale da/per Disneyland Parigi e l'aeroporto CDG ✈️🏰
+📞 {PHONE} | 🌐 {SITE_URL}
+#TaxiDisneylandParigi #TransferParigi #TaxiCDG #DisneyTaxi #TaxiParigi #ViaggioParigi""",
+
+    f"""✈️ Transfer Aeroporto CDG e Orly — Marne-la-Vallée
+Servizio puntuale disponibile 24h/7 giorni. Prezzi fissi senza sorprese!
+🧳 Assistenza bagagli inclusa
+📞 {PHONE} | 🌐 {SITE_URL}
+#TransferAeroporto #TaxiParigi #CDGAeroporto #TaxiFrancia #ViaggioParigi #DisneyShuttle""",
+
+    f"""🏰 Visitate Disneyland Parigi? Vi accompagniamo!
+Taxi familiari con seggiolini per bambini disponibili 👨‍👩‍👧‍👦
+Prenota su: {SITE_URL}
+📞 {PHONE}
+#DisneylandParigi #TaxiDisney #ViaggioParigi #FamigliaViaggio #TaxiFrancia #DisneyShuttle""",
+
+    # ════════════════════════════════════════════
+    # 🇩🇪 DEUTSCH
+    # ════════════════════════════════════════════
+    f"""🚖 Taxi nach Disneyland Paris — Jetzt buchen!
+Professioneller Taxiservice von/nach Disneyland Paris und Flughafen CDG ✈️🏰
+📞 {PHONE} | 🌐 {SITE_URL}
+#TaxiDisneylandParis #TransferParis #TaxiCDG #DisneyTransfer #TaxiParis #ParisReise""",
+
+    f"""✈️ Flughafentransfer CDG & Orly — Marne-la-Vallée
+Pünktlicher Service 24h/7 Tage. Festpreise ohne Überraschungen!
+🧳 Gepäckservice inklusive
+📞 {PHONE} | 🌐 {SITE_URL}
+#Flughafentransfer #TaxiParis #CDGFlughafen #TaxiFrankreich #ParisReise #DisneyShuttle""",
+
+    f"""🏰 Besuch in Disneyland Paris? Wir fahren Sie hin!
+Familientaxis mit Kindersitzen verfügbar 👨‍👩‍👧‍👦
+Online buchen: {SITE_URL}
+📞 {PHONE}
+#DisneylandParis #TaxiDisney #ParisReise #Familienreise #TaxiFrankreich #DisneyShuttle""",
+
+    # ════════════════════════════════════════════
+    # 💡 BONUS SEO — Posts spéciaux haute valeur
+    # ════════════════════════════════════════════
+    f"""🎯 Taxi Marne-la-Vallée — Zones desservies :
+📍 Chessy • Val d'Europe • Bussy-Saint-Georges
+📍 Noisy-le-Grand • Torcy • Lognes • Lagny
+📍 CDG • Orly • Disneyland • Paris Centre
+📞 {PHONE} | 🌐 {SITE_URL}
+#TaxiMarneLaVallée #TaxiSeineetMarne #TaxiBussy #TaxiChessy #TaxiValDEurope""",
+
+    f"""💎 Pourquoi choisir notre taxi ?
+✅ Véhicules récents & climatisés
+✅ Chauffeurs professionnels & discrets
+✅ Paiement CB / espèces / virement
+✅ Devis gratuit sur demande
+✅ Disponible 24h/24 — 365 jours/an
+📞 {PHONE} | 🌐 {SITE_URL}
+#TaxiMarneLaVallée #TaxiPro #DisneylandParis #TaxiParis #ValDEurope""",
 ]
 
-# ─── Sélection du post du jour ─────────────────────────────────────────────────
-hour = datetime.utcnow().hour
-day  = datetime.utcnow().weekday()
-# Rotation basée sur heure + jour pour varier les messages
-index = (hour + day * 3) % len(POSTS)
+# ─── Rotation intelligente ────────────────────────────────────────────────────
+hour  = datetime.utcnow().hour
+day   = datetime.utcnow().timetuple().tm_yday
+index = (hour * 7 + day * 3) % len(POSTS)
 message = POSTS[index]
 
 # ─── Publication Facebook ──────────────────────────────────────────────────────
 url = f"https://graph.facebook.com/v19.0/{PAGE_ID}/feed"
 payload = {
-    "message": message,
-    "link":    SITE_URL,
+    "message":      message,
+    "link":         SITE_URL,
     "access_token": PAGE_TOKEN,
 }
-
 response = requests.post(url, data=payload)
 result   = response.json()
 
 if "id" in result:
-    print(f"✅ Post publié avec succès ! ID: {result['id']}")
-    print(f"📝 Message : {message[:80]}...")
+    print(f"✅ Post Facebook publié ! ID: {result['id']}")
+    print(f"🌍 Langue du post: {message[:30]}...")
 else:
     print(f"❌ Erreur : {result}")
     exit(1)
