@@ -9,15 +9,16 @@ IG_USER_ID = os.environ["IG_USER_ID"]
 SITE_URL   = "https://www.taximarnelavallee.com"
 PHONE      = "06 XX XX XX XX"
 
-# ─── Images publiques (taxi, route, Paris, Disneyland) ────────────────────────
+# ─── Images personnalisées hébergées sur GitHub ───────────────────────────────
+REPO_RAW = "https://raw.githubusercontent.com/Taxi77777/facebook-seo-taxi/master/images"
 IMAGES = [
-    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1080&q=80",
-    "https://images.unsplash.com/photo-1504215680853-026ed2a45def?w=1080&q=80",
-    "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1080&q=80",
-    "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?w=1080&q=80",
-    "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1080&q=80",
-    "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1080&q=80",
+    f"{REPO_RAW}/taxi_disneyland.png",   # Taxi devant Disneyland Paris
+    f"{REPO_RAW}/taxi_airport.png",      # Taxi à l'aéroport CDG
+    f"{REPO_RAW}/taxi_family.png",       # Famille avec taxi minivan
+    f"{REPO_RAW}/taxi_night.png",        # Taxi de nuit Marne-la-Vallée
+    f"{REPO_RAW}/taxi_val_europe.png",   # Chauffeur Val d'Europe
 ]
+
 
 # ─── Légendes multilingues SEO ─────────────────────────────────────────────────
 CAPTIONS = [
