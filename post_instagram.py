@@ -9,14 +9,21 @@ IG_USER_ID = os.environ["IG_USER_ID"]
 SITE_URL   = "https://www.taximarnelavallee.com"
 PHONE      = "06 XX XX XX XX"
 
-# ─── Images personnalisées hébergées sur GitHub ───────────────────────────────
+# ─── 12 Images personnalisées hébergées sur GitHub ───────────────────────────
 REPO_RAW = "https://raw.githubusercontent.com/Taxi77777/facebook-seo-taxi/master/images"
 IMAGES = [
-    f"{REPO_RAW}/taxi_disneyland.png",   # Taxi devant Disneyland Paris
-    f"{REPO_RAW}/taxi_airport.png",      # Taxi à l'aéroport CDG
-    f"{REPO_RAW}/taxi_family.png",       # Famille avec taxi minivan
-    f"{REPO_RAW}/taxi_night.png",        # Taxi de nuit Marne-la-Vallée
-    f"{REPO_RAW}/taxi_val_europe.png",   # Chauffeur Val d'Europe
+    f"{REPO_RAW}/taxi_disney_01.png",    # Taxi devant château Disneyland - lever de soleil
+    f"{REPO_RAW}/taxi_disney_02.png",    # Chauffeur ouvre la portière - Disneyland
+    f"{REPO_RAW}/taxi_disney_03.png",    # Minivan famille - Disney Village
+    f"{REPO_RAW}/taxi_disney_04.png",    # Vue aérienne - Marne-la-Vallée vers Disneyland
+    f"{REPO_RAW}/taxi_airport_02.png",   # Chauffeur avec panneau à CDG
+    f"{REPO_RAW}/taxi_airport_03.png",   # Taxi à Orly - chargement valises
+    f"{REPO_RAW}/taxi_night_02.png",     # Taxi nuit - Val d'Europe
+    f"{REPO_RAW}/taxi_family_02.png",    # Enfants Mickey - sortie taxi Disneyland
+    f"{REPO_RAW}/taxi_interior_01.png",  # Intérieur luxueux du taxi
+    f"{REPO_RAW}/taxi_chessy_01.png",    # Taxi gare Chessy RER
+    f"{REPO_RAW}/taxi_medical_01.png",   # Transport médical VSL
+    f"{REPO_RAW}/taxi_luxury_01.png",    # Mercedes taxi boulevard Paris
 ]
 
 
